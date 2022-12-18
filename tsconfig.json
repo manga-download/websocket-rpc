@@ -1,0 +1,15 @@
+{
+    "files": [
+        "./src/_index.ts"
+    ],
+    "compilerOptions": {
+        "strict": true,
+        "declaration": true,
+        "outDir": "./dist",
+        "target": "ES2017",
+        "module": "ES2020",
+        "moduleResolution": "node",
+        "forceConsistentCasingInFileNames": true,
+        "removeComments": true
+    }
+}
