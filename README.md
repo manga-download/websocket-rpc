@@ -5,7 +5,7 @@ A typesafe RPC implementation for WebSockets based on the popular [ws](https://w
 ## Pre-Conditions
 
 - The WebSocket server must be run in a NodeJS environment
-- The WebSocket client must be run in a Browser environment
+- The WebSocket client should be run in a Browser environment
 
 ## Install
 

@@ -1,6 +1,12 @@
 {
   "name": "websocket-rpc",
+  "description": "A typesafe RPC implementation for WebSockets",
   "version": "1.0.0",
+  "homepage": "https://www.npmjs.com/package/websocket-rpc",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/manga-download/websocket-rpc"
+  },
   "type": "module",
   "main": "./dist/_index.js",
   "types": "dist/_index.d.ts",
