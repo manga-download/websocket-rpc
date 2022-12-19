@@ -8,11 +8,33 @@
     "url": "https://github.com/manga-download/websocket-rpc"
   },
   "type": "module",
-  "main": "./dist/_index.js",
-  "types": "dist/_index.d.ts",
   "files": [
     "/dist"
   ],
+  "exports": {
+    ".": {
+      "import": "./dist/_index.js",
+      "types": "./dist/_index.d.ts"
+    },
+    "./server": {
+      "import": "./dist/server.js",
+      "types": "./dist/server.d.ts"
+    },
+    "./client": {
+      "import": "./dist/client.js",
+      "types": "./dist/client.d.ts"
+    }
+  },
+  "//": "Use 'main', 'types' and 'typesVersions' for backward compatibility until 'exports' is fully supported by typescript",
+  "main": "./dist/_index.js",
+  "types": "./dist/_index.d.ts",
+  "typesVersions": {
+    "*": {
+      ".": [ "./dist/_index.d.ts" ],
+      "server": [ "./dist/server.d.ts" ],
+      "client": [ "./dist/client.d.ts" ]
+    }
+  },
   "devDependencies": {
     "@types/jest": "^29.2.4",
     "@types/ws": "^8.5.3",

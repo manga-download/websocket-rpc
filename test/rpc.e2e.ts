@@ -1,6 +1,6 @@
 import { type WebSocketClient, CreateClient } from '../dist/client';
 import { type WebSocketServer, CreateServer } from '../dist/server';
-import { RemoteContract } from '../dist/types';
+import type { RemoteContract } from '../dist/types';
 
 class TestFixture<T extends RemoteContract<T>> {
 
