@@ -1,7 +1,7 @@
 {
   "name": "websocket-rpc",
   "description": "A typesafe RPC implementation for WebSockets",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "homepage": "https://www.npmjs.com/package/websocket-rpc",
   "repository": {
     "type": "git",
