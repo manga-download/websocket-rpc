@@ -8,7 +8,9 @@ export type WebSocketClient<T extends RemoteContract<T>> = WebSocket & { readonl
 export async function CreateClient<T extends RemoteContract<T>>(url: string | URL, timeout: number = 5000): Promise<WebSocketClient<T>> {
 
     // Detect WebSocket existing at runtime and dynamically load polyfill (e.g. when running in NodeJS instead of Browser)
-    globalThis.WebSocket = globalThis.WebSocket ?? (await import('ws')).WebSocket;
+    // Use variable to prevent bundlers from bundling this optional (external) dependency
+    const wsPolyFill = 'ws';
+    globalThis.WebSocket = globalThis.WebSocket ?? (await import(wsPolyFill)).WebSocket;
 
     return new class extends WebSocket {
 
