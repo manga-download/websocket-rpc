@@ -4,5 +4,14 @@ export default {
     testMatch: [ '**/*[_.](test|spec).[jt]s' ],
     reporters: [
         'default',
-    ]
+    ],
+    transform: {
+        '^.+\\.tsx?$': [
+            'ts-jest', {
+                tsconfig: {
+                    esModuleInterop: true,
+                }
+            }
+        ]
+    },
 };

@@ -8,23 +8,17 @@ export default {
     reporters: [
         'default',
     ],
-    /*
     transform: {
-        '^.+\\.tsx?$': ['ts-jest', {
-            tsconfig: {
-                allowJs: true,
-                //esModuleInterop: true,
+        '^.+\\.tsx?$': [
+            'ts-jest', {
+                tsconfig: {
+                    allowJs: true,
+                    esModuleInterop: true,
+                }
             }
-        }]
+        ]
     },
-    */
     globals: {
-        'ts-jest': {
-            tsconfig: {
-                allowJs: true,
-                //esModuleInterop: true
-            }
-        },
         'MessageEvent': MessageEvent
     }
 };
