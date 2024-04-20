@@ -16,29 +16,15 @@
   "exports": {
     ".": {
       "import": "./dist/mjs/_index.js",
-      "require": "./dist/cjs/_index.cjs"
+      "require": "./dist/cjs/_index.js"
     },
     "./server": {
       "import": "./dist/mjs/server.js",
-      "require": "./dist/cjs/server.cjs"
+      "require": "./dist/cjs/server.js"
     },
     "./client": {
       "import": "./dist/mjs/client.js",
-      "require": "./dist/cjs/client.cjs"
-    }
-  },
-  "//": "Use 'main', 'modue' and 'typesVersions' for backward compatibility until 'exports' is fully supported by typescript",
-  "typesVersions": {
-    "*": {
-      ".": [
-        "./dist/mjs/_index.d.ts"
-      ],
-      "server": [
-        "./dist/mjs/server.d.ts"
-      ],
-      "client": [
-        "./dist/mjs/client.d.ts"
-      ]
+      "require": "./dist/cjs/client.js"
     }
   },
   "devDependencies": {
