@@ -1,5 +1,6 @@
-import { type WebSocketServer, CreateServer } from '../dist/mjs/server';
-import { type WebSocketClient, CreateClient } from '../dist/mjs/client';
+import { describe, test, expect } from 'vitest';
+import { type WebSocketServer, CreateServer } from '../dist/server';
+import { type WebSocketClient, CreateClient } from '../dist/client';
 
 class TestFixture {
 
@@ -28,7 +29,7 @@ class TestFixture {
 
 describe('WebSocket Communication', () => {
 
-    it('Should send message from client => server', async() => {
+    test('Should send message from client => server', async() => {
 
         const fixture = new TestFixture();
 
@@ -46,7 +47,7 @@ describe('WebSocket Communication', () => {
         }
     });
 
-    it('Should send message from server => client', async() => {
+    test('Should send message from server => client', async() => {
 
         const fixture = new TestFixture();
 

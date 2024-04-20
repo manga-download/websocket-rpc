@@ -1,8 +1,9 @@
+import { describe, test, expect } from 'vitest';
 import { DeferredTask } from './task';
 
 describe('DeferredTask', () => {
 
-    it('Should resolve within the given time', async() => {
+    test('Should resolve within the given time', async() => {
         const expected = '+';
         const testee = new DeferredTask<string>();
         setTimeout(() => testee.SetResult(expected), 50);
@@ -14,7 +15,7 @@ describe('DeferredTask', () => {
         expect(value).toStrictEqual(expected);
     });
 
-    it('Should reject within the given time', async() => {
+    test('Should reject within the given time', async() => {
         const expected = new Error('-');
         const testee = new DeferredTask<number>();
         setTimeout(() => testee.SetError(expected), 50);

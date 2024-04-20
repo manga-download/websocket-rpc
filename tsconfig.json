@@ -1,5 +1,7 @@
 {
     "files": [
+        "./src/server.ts",
+        "./src/client.ts",
         "./src/_index.ts"
     ],
     "compilerOptions": {

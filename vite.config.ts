@@ -15,4 +15,5 @@ export default defineConfig({
             formats: [ 'es', 'cjs' ],
         },
     },
+    test: {},
 });

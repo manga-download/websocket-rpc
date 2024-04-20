@@ -1,6 +1,7 @@
-import type{ RemoteContract } from '../dist/mjs/_index';
-import { type WebSocketServer, CreateServer } from '../dist/mjs/server';
-import { type WebSocketClient, CreateClient } from '../dist/mjs/client';
+import { describe, test, expect } from 'vitest';
+import type{ RemoteContract } from '../dist/_index';
+import { type WebSocketServer, CreateServer } from '../dist/server';
+import { type WebSocketClient, CreateClient } from '../dist/client';
 
 class TestFixture<T extends RemoteContract<T>> {
 
@@ -29,7 +30,7 @@ class TestFixture<T extends RemoteContract<T>> {
 
 describe('WebSocket RPC', () => {
 
-    it('Should call contract method without parameters and without return value', async () => {
+    test('Should call contract method without parameters and without return value', async () => {
 
         let invoked = false;
         class TestContract {
@@ -49,7 +50,7 @@ describe('WebSocket RPC', () => {
         }
     });
 
-    it('Should call contract method with single parameter and without return value', async () => {
+    test('Should call contract method with single parameter and without return value', async () => {
 
         let parameters: any;
         class TestContract {
@@ -69,7 +70,7 @@ describe('WebSocket RPC', () => {
         }
     });
 
-    it('Should call contract method with multiple parameters and without return value', async () => {
+    test('Should call contract method with multiple parameters and without return value', async () => {
 
         let parameters: any;
         class TestContract {
@@ -89,7 +90,7 @@ describe('WebSocket RPC', () => {
         }
     });
 
-    it.each([
+    test.each([
         // CASE: return null
         null,
         // CASE: return boolean
@@ -120,7 +121,7 @@ describe('WebSocket RPC', () => {
         }
     });
 
-    it('Should timeout for long response', async() => {
+    test('Should timeout for long response', async() => {
 
         class TestContract {
             RemoteCall = async (delay: number) => new Promise<void>(resolve => setTimeout(resolve, delay));
@@ -144,7 +145,7 @@ describe('WebSocket RPC', () => {
         }
     });
 
-    it('Should throw remote error', async() => {
+    test('Should throw remote error', async() => {
 
         class TestContract {
             RemoteCall = async () => { throw new Error('😈'); };
@@ -167,7 +168,7 @@ describe('WebSocket RPC', () => {
         }
     });
 
-    it('Should throw when calling a non-defined contract method', async() => {
+    test('Should throw when calling a non-defined contract method', async() => {
 
         class TestContract {}
 
