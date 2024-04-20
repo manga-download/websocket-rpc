@@ -52,7 +52,7 @@
     "ws": "^8.16.0"
   },
   "scripts": {
-    "build": "tsc -p ./tsconfig-mjs.json && tsc -p ./tsconfig-cjs.json",
+    "build": "rm -r -f ./dist && tsc -p ./tsconfig-mjs.json && tsc -p ./tsconfig-cjs.json",
     "test:unit": "npm run build && jest --runInBand --config='./jest.unit.js'",
     "test:integration": "npm run build && jest --detectOpenHandles --runInBand --config='./jest.integration.js'",
     "deploy:dry": "npm run build && npm publish --dry-run",
