@@ -4,9 +4,14 @@
     ],
     "compilerOptions": {
         "strict": true,
+        "target": "ES2017",
+        "module": "ES2020",
+        "outDir": "./dist",
         "declaration": true,
+        "emitDeclarationOnly": true,
+        "declarationDir": "./dist",
         "moduleResolution": "Node",
         "forceConsistentCasingInFileNames": true,
-        "removeComments": true,
+        "removeComments": false,
     }
 }

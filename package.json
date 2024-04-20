@@ -11,34 +11,35 @@
     "/dist"
   ],
   "type": "module",
-  "main": "./dist/cjs/_index.js",
-  "module": "./dist/mjs/_index.js",
+  "main": "./dist/_index.cjs",
+  "module": "./dist/_index.js",
+  "types": "./dist/_index.d.ts",
   "exports": {
     ".": {
-      "import": "./dist/mjs/_index.js",
-      "require": "./dist/cjs/_index.js"
+      "types": "./dist/_index.d.ts"
     },
     "./server": {
-      "import": "./dist/mjs/server.js",
-      "require": "./dist/cjs/server.js"
+      "import": "./dist/server.js",
+      "require": "./dist/server.cjs",
+      "types": "./dist/server.d.ts"
     },
     "./client": {
-      "import": "./dist/mjs/client.js",
-      "require": "./dist/cjs/client.js"
+      "import": "./dist/client.js",
+      "require": "./dist/client.cjs",
+      "types": "./dist/client.d.ts"
     }
   },
   "devDependencies": {
-    "@types/jest": "^29.5.12",
     "@types/ws": "^8.5.10",
-    "jest": "^29.7.0",
-    "ts-jest": "^29.1.2",
-    "typescript": "^5.4.5"
+    "typescript": "^5.4.5",
+    "vite": "^5.2.10",
+    "vitest": "^1.5.0"
   },
   "dependencies": {
     "ws": "^8.16.0"
   },
   "scripts": {
-    "build": "rm -r -f ./dist && tsc -p ./tsconfig-mjs.json && tsc -p ./tsconfig-cjs.json",
+    "build": "vite build && tsc",
     "test:unit": "npm run build && jest --runInBand --config='./jest.unit.js'",
     "test:integration": "npm run build && jest --detectOpenHandles --runInBand --config='./jest.integration.js'",
     "deploy:dry": "npm run test:unit && npm run test:integration && npm publish --dry-run",

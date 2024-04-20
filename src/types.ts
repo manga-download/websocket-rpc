@@ -39,4 +39,4 @@ type RemoteMethod<TFunction> = TFunction extends (...parameters: infer _TParamet
 
 export type RemoteContract<TContract> = {
     [TKey in keyof TContract]: TKey extends string ? RemoteMethod<TContract[TKey]> : never;
-}
+};
