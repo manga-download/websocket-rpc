@@ -1,5 +1,5 @@
-import { type WebSocketClient, CreateClient } from '../dist/client';
-import { type WebSocketServer, CreateServer } from '../dist/server';
+import { type WebSocketServer, CreateServer } from '../dist/mjs/server';
+import { type WebSocketClient, CreateClient } from '../dist/mjs/client';
 
 class TestFixture {
 
