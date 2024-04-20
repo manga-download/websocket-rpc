@@ -8,5 +8,6 @@
         "moduleResolution": "Node",
         "forceConsistentCasingInFileNames": true,
         "removeComments": true,
+        "esModuleInterop": true,
     }
 }
