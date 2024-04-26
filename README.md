@@ -9,9 +9,13 @@ A typesafe RPC implementation for WebSockets based on the popular [ws](https://w
 
 ## Install
 
-[From GitHub](https://www.pluralsight.com/resources/blog/guides/install-npm-packages-from-gitgithub):
-- Latest: `npm install github:manga-download/websocket-rpc`
-- Specific version: `npm install github:manga-download/websocket-rpc#1.2.1`
+### [ℹ️](https://www.pluralsight.com/resources/blog/guides/install-npm-packages-from-gitgithub) From GitHub
+- [Latest](https://github.com/manga-download/websocket-rpc): `npm install github:manga-download/websocket-rpc`
+- [Specific version](https://github.com/manga-download/websocket-rpc/tags): `npm install github:manga-download/websocket-rpc#v1.2.4`
+
+### From NPM
+- [Latest](https://www.npmjs.com/package/websocket-rpc): `npm install websocket-rpc`
+- [Specific version](https://www.npmjs.com/package/websocket-rpc?activeTab=versions): `npm install websocket-rpc@1.2.4`
 
 ## Quick Start
 
