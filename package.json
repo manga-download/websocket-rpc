@@ -1,7 +1,7 @@
 {
   "name": "websocket-rpc",
   "description": "A typesafe RPC implementation for WebSockets",
-  "version": "1.2.2",
+  "version": "1.2.1",
   "homepage": "https://www.npmjs.com/package/websocket-rpc",
   "repository": {
     "type": "git",
@@ -43,6 +43,6 @@
     "test:unit": "vitest run --config ./vitest.unit.ts",
     "test:integration": "npm run build && vitest run --config ./vitest.e2e.ts",
     "deploy:dry": "npm run test:unit && npm run test:integration && npm run build && npm publish --dry-run",
-    "deploy:production": "npm run test:unit && npm run test:integration && npm run build && npm publish && npm version patch --no-git-tag-version"
+    "deploy:production": "npm run test:unit && npm run test:integration && npm run build && npm version patch && npm publish"
   }
 }
