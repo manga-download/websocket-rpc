@@ -11,11 +11,10 @@
     "/dist"
   ],
   "type": "module",
-  "main": "./dist/_index.cjs",
-  "module": "./dist/_index.js",
-  "types": "./dist/_index.d.ts",
   "exports": {
     ".": {
+      "import": "./dist/_index.js",
+      "require": "./dist/_index.cjs",
       "types": "./dist/_index.d.ts"
     },
     "./server": {
@@ -30,15 +29,16 @@
     }
   },
   "devDependencies": {
-    "@types/ws": "^8.5.10",
-    "typescript": "^5.4.5",
-    "vite": "^5.2.10",
-    "vitest": "^1.5.2"
+    "@types/ws": "^8.5.11",
+    "typescript": "^5.5.4",
+    "vite": "^5.3.5",
+    "vitest": "^2.0.4"
   },
   "dependencies": {
-    "ws": "^8.16.0"
+    "ws": "^8.18.0"
   },
   "scripts": {
+    "prepare": "npm run build",
     "build": "vite build && tsc",
     "test:unit": "vitest run --config ./vitest.unit.ts",
     "test:integration": "npm run build && vitest run --config ./vitest.e2e.ts",

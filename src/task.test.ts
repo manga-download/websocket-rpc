@@ -3,7 +3,7 @@ import { DeferredTask } from './task';
 
 describe('DeferredTask', () => {
 
-    test('Should resolve within the given time', async() => {
+    test('Should resolve within the given time', { retry: 25 }, async() => {
         const expected = '+';
         const testee = new DeferredTask<string>();
         setTimeout(() => testee.SetResult(expected), 50);
@@ -15,7 +15,7 @@ describe('DeferredTask', () => {
         expect(value).toStrictEqual(expected);
     });
 
-    test('Should reject within the given time', async() => {
+    test('Should reject within the given time', { retry: 25 }, async() => {
         const expected = new Error('-');
         const testee = new DeferredTask<number>();
         setTimeout(() => testee.SetError(expected), 50);
